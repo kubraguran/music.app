@@ -1,0 +1,273 @@
+
+  .container-sm {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    margin-top:10%;
+    background-color: rgb(253, 255, 254);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(201,219,197,1);
+     box-shadow: 0px 0px 20px 0px rgba(201,219,197,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+
+
+  }
+
+  p{
+   display: flex;
+   float: left;
+   margin-bottom:-2rem;
+
+} 
+  p a:hover{
+  color: white;
+   }
+
+.share{
+    display: inline-flex;
+    float: right;
+    margin-left: 0.1rem;
+
+}
+.share a:hover{
+    color:white;
+}
+.img-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -3rem;
+
+   
+}
+
+  #music-img{
+       width: 180px;
+       height: 180px;
+       border-radius: 50%;
+       margin-left: 0.6rem;
+       margin-top:0.5rem;
+       animation-name: play;
+       animation-duration: 3s;
+        animation-iteration-count: infinite;
+       animation-play-state: running;
+    }
+    
+   @keyframes play {
+       from {
+           transform: rotate(0deg);
+       }to{
+           transform: rotate(360deg);
+       }
+   }
+
+
+  #switch {
+      display: flex;
+      margin-bottom: 1rem;
+      
+  }
+
+  input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  
+  }
+  label {
+    display: block;
+    width: 23px;
+    height: 12px;
+    background-color: #477a85;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 20px #477a8550;
+    float: right;
+   
+  }
+
+
+label::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #e8f5f7;
+    position: absolute;
+    border-radius: 70px;
+    top: 1px;
+    left: -1px;
+    transition: 0.5s;
+    float: right;
+    display: flex;
+  }
+input:checked + label:after {
+    left: calc(100% - 20px);
+    transform: translateX(100%);
+    }
+ input:checked + label {
+     background-color: #8abd14;
+  }
+label:active:after {
+    width: 10px;
+ }     
+
+ #artist {
+     font-size: 1.5rem;
+     margin-left:1rem;
+     margin-top:0.5rem;
+     font-family: monospace;
+     color: rgb(109, 36, 60);
+     display: flex;
+ }
+ #like {
+     display: flex;
+     float: right;
+     
+ }
+ #track_art {
+    font-size: larger;
+    margin-left:1.1rem;
+    margin-top:0.5rem;
+    font-family: monospace;
+    color: rgb(136, 48, 77);
+ 
+     
+ }
+
+ .slider_container {
+    margin-left:1rem;
+    margin-top:2.5rem;
+    font-family: monospace;
+    color:black;
+     
+ }
+
+
+.button-container {
+   justify-content: center;
+   display: flex;
+
+  
+ 
+}
+
+.prev-btn,
+.next-btn,
+.stop-btn{
+    background:transparent;
+    border-color: transparent;
+  
+}
+.prev-btn,
+.next-btn,
+.stop-btn:hover{
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    border-color:white;
+    
+}
+.stop-btn{
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);  
+}
+
+/*Slider Side*/
+.slider_container {
+    width: 16.5rem;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .seek_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  .seek_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.seek_slider:hover {
+  opacity: 1.0;
+}
+  
+.seek_slider {
+  width: 60%;
+}
+  
+.current-time {
+    margin-right:1rem;
+}
+
+.total-duration {
+    margin-left:1rem;
+}
+
+
+.dark-mode {
+    background-color: #1c1e1f;
+    
+    
+}
+
+.dark-mode p{
+    color:white;
+
+}
+.dark-mode 
+.prev-btn {    
+ color: white;
+}
+
+.dark-mode .next-btn {
+    color: white;
+}
+
+.dark-mode .stop-btn {
+    color: white;
+}
+
+.dark-mode #artist{
+    color: white;
+}
+
+.dark-mode #music{
+    color: white;
+}
+.dark-mode .img-container {
+    background-color: rgba(75, 74, 74, 0.842);
+}
+
+.dark-mode .current-time {
+    color: white;
+}
+
+.dark-mode .total-duration {
+    color: white;
+}
+
+
+.dark-mode .share{
+   color: white;
+}

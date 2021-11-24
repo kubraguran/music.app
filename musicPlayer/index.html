@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <audio src="music/ukelele.mp3" id = "song"></audio>
+    <img src="./assets/images/lemonade.png" id="thumbnail" />
+
+   
+  
+    <title>musicPlayer</title>
+</head>
+
+<body>
+    <main class="main-part">
+        <section class="container-sm" style="width: 18.5rem; height: 30rem;">
+            <!--title-->
+            <div class="title">
+                <h2>
+                    <p><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                class="bi bi-x-circle-fill mx-2" style= "color:rgb(177, 7, 7)" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" style= "color:rgb(219, 219, 29); background-color:yellow; border-radius:50%;"class="bi bi-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                          </svg></a>
+                    </p>
+                    <p><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" style= "color:rgb(36, 175, 59); background-color:rgb(21, 161, 21); border-radius:50%;"class="bi bi-circle mx-2" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      </svg></a></p>
+                            <p2 class = "share mx-3"><a href ="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style= "color: black;" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+                                    <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                                  </svg>
+                            </a></p2>
+                          <!--toggle button-->
+                      <input type="checkbox" onclick="toggleButton()" name="switch" id="switch">
+                      <label for="switch"></label>
+                      <!--End of the toggle-->
+                </h2>
+                
+                <div class="underline"></div>
+            </div>
+            <!--Music -->
+            <article class="music-container">
+                <div class="img-container mx-5 " >
+                    <img src="https://i.ytimg.com/vi/DcuoVikb2fc/maxresdefault.jpg" id="music-img" alt=" ">
+                </div>
+                <h4 id="artist">Anonim</h4>
+                <h1 id= "like"><a href ="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-suit-heart-fill" style ="margin-bottom:2rem; margin-left:-3rem; color:red"viewBox="0 0 16 16">
+                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                  </svg></a></h1>
+                <p1 id="track_art">Anonim music</p1>
+                <!--Slider-->
+                <div class="slider_container">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                    <div class="total-duration">00:00</div>
+                </div>
+                <!--Slider End-->
+                <div class="button-container mb-4">
+                    <button class="prev-btn shadow-sm p-2 mx-3" style= "border-radius:50%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                        </button>
+                          <button class = "stop-btn shadow-sm p-2" style= "border-radius:50%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="playPause()" width="40" height="40" fill="currentColor" class="bi bi-stop-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"/>
+                              </svg>
+                          </button>
+                          <button class="next-btn shadow-sm p-2 mx-3" style= "border-radius:50%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right mb-1" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                    </button>
+                    </div>
+                </div>
+                <!--Random button-->
+               <!-- <button class="random-btn">I feel Lucky!</button> -->
+            </article>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
